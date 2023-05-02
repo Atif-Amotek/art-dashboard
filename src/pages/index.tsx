@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import { api } from "~/utils/api";
 
+import MailChimp from "./api/trpc/mailchimp";
+
 const Home: NextPage = () => {
   const hello = api.example.hello.useQuery({ text: "from tRPC" });
 
