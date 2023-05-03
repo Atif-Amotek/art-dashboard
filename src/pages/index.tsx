@@ -2,9 +2,9 @@ import { type NextPage } from "next";
 import Head from "next/head";
 
 import Layout from "~/components/layout";
+import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Head>
@@ -13,7 +13,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-gray-700 min-h-screen">
-        <Layout />
+        <Layout>
+
+        </Layout>
       </main>
     </>
   );
