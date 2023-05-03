@@ -5,6 +5,8 @@ import Layout from "~/components/layout";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
+  const query = api.mailchimp.getAllMembers.useQuery();
+
   return (
     <>
       <Head>
@@ -14,7 +16,6 @@ const Home: NextPage = () => {
       </Head>
       <main className="bg-gray-700 min-h-screen">
         <Layout>
-
         </Layout>
       </main>
     </>

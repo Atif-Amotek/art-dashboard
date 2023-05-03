@@ -10,4 +10,9 @@ const GetMailChimpList = async () => {
     console.log(response);
 }
 
+export const GetMembersFromList = async () => {
+    const response = await mailchimp.lists.getListMembersInfo("d38305ae72");
+    console.log(response.members[0].email_address);
+}
+
 export default GetMailChimpList;
