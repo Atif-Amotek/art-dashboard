@@ -5,7 +5,7 @@ import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
 export const mailChimpRouter = createTRPCRouter({
   getAllLists: publicProcedure
-    .query(async () => {
+    .query(() => {
       GetMailChimpList();
     }),
   getAll: publicProcedure.query(({ ctx }) => {
