@@ -1,7 +1,9 @@
 import { z } from "zod";
-import GetMailChimpList, { GetMembersFromList } from "~/pages/api/trpc/mailchimpAPI";
+import { GetMailChimpList, GetMembersFromList } from "~/pages/api/trpc/mailchimpAPI";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+
+const { memberEmails } = await GetMembersFromList();
 
 export const mailChimpRouter = createTRPCRouter({
   getAllLists: publicProcedure
@@ -10,6 +12,6 @@ export const mailChimpRouter = createTRPCRouter({
     }),
   getAllMembers: publicProcedure
     .query(() => {
-      GetMembersFromList();
+      memberEmails
     }),
 });
