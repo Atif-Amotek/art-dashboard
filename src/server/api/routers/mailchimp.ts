@@ -11,7 +11,8 @@ export const mailChimpRouter = createTRPCRouter({
       GetMailChimpList();
     }),
   getAllMembers: publicProcedure
-    .query(() => {
-      memberEmails
+    .query(async () => {
+      const { memberEmails,memberName,memberLastName } = await GetMembersFromList();
+      console.log(memberEmails,memberName,memberLastName)
     }),
 });
