@@ -3,8 +3,6 @@ import { GetMailChimpList, GetMembersFromList } from "~/pages/api/trpc/mailchimp
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
-const { memberEmails } = await GetMembersFromList();
-
 export const mailChimpRouter = createTRPCRouter({
   getAllLists: publicProcedure
     .query(() => {
@@ -12,7 +10,10 @@ export const mailChimpRouter = createTRPCRouter({
     }),
   getAllMembers: publicProcedure
     .query(async () => {
-      const { memberEmails,memberName,memberLastName } = await GetMembersFromList();
-      console.log(memberEmails,memberName,memberLastName)
+      const { memberEmails, memberName } = await GetMembersFromList();
+
+      return {
+        memberEmails, memberName
+      }
     }),
 });

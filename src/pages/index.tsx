@@ -16,6 +16,7 @@ const Home: NextPage = () => {
       </Head>
       <main className="bg-gray-700 min-h-screen">
         <Layout>
+          {query.data?.memberEmails.map((e) => <div>{e}</div>)}
         </Layout>
       </main>
     </>
