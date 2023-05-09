@@ -10,7 +10,7 @@ const Layout: FC<Props> = ({ children }) => {
     return (
         <>
             <SideNavBar />
-            <main className="p-4 sm:ml-64">{children}</main>
+            <main className="p-4 sm:ml-64 bg-gray-700">{children}</main>
         </>
     )
 }

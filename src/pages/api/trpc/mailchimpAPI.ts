@@ -13,18 +13,16 @@ export const GetMailChimpList = async () => {
 }
 
 export const GetMembersFromList = async () => {
-    //const memberEmails = new Set();
-    const memberEmails: string[] = []
-    //const memberName = new Set();
-    const memberName: string[] = [];
+    const memberList = new Set();
     const response = await mailchimp.lists.getListMembersInfo("d38305ae72");
+
     for (let i = 0; i < response.members.length; i++) {
-        memberEmails.push(response.members[i].email_address);
-        memberName.push(response.members[i].full_name);
+        memberList.add({ email: response.members[i].email_address, name: response.members[i].full_name })
     }
 
+    const memberListArray = Array.from(memberList);
+
     return {
-        memberEmails,
-        memberName,
+        memberListArray
     }
 }
