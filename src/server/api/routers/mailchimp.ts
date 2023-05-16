@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { GetMailChimpList, GetMembersFromList } from "~/pages/api/trpc/mailchimpAPI";
+import { GetMailChimpList, GetMembersFromList } from "~/pages/api/mailchimpAPI";
 
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
